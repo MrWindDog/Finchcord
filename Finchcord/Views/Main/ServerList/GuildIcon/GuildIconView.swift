@@ -34,7 +34,11 @@ struct ServerIconView: View {
         .clipShape(Circle())
         .overlay(
             Circle()
+                #if os(iOS)
                 .stroke(Color(.systemBackground), lineWidth: 2)
+                #elseif os(macOS)
+                .stroke(Color(NSColor.windowBackgroundColor), lineWidth: 2)
+                #endif
         )
         .shadow(color: Color.black.opacity(0.1), radius: 2, x: 0, y: 1)
     }

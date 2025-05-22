@@ -49,7 +49,11 @@ struct ServerView: View {
             }
         }
         .padding(10)
+        #if os(iOS)
         .background(Color(.systemBackground).opacity(0.8))
+        #elseif os(macOS)
+        .background(Color(NSColor.windowBackgroundColor).opacity(0.8))
+        #endif
         .cornerRadius(10)
         .padding(.horizontal)
         .padding(.top, 8)
@@ -130,7 +134,11 @@ struct ServerRow: View {
         }
         .padding(.vertical, 10)
         .padding(.horizontal, 14)
+        #if os(iOS)
         .background(Color(.secondarySystemGroupedBackground))
+        #elseif os(macOS)
+        .background(Color(NSColor.windowBackgroundColor))
+        #endif
         .cornerRadius(12)
     }
 }

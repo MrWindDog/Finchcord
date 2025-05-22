@@ -146,7 +146,11 @@ struct MessageView: View {
             .padding(10)
             .background(
                 RoundedRectangle(cornerRadius: 12)
+                    #if os(iOS)
                     .fill(Color(.systemGray6))
+                    #elseif os(macOS)
+                    .fill(Color(NSColor.darkGray))
+                    #endif
             )
             .overlay(
                 RoundedRectangle(cornerRadius: 12)

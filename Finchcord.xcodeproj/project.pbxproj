@@ -304,6 +304,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Finchcord/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "We need access to your documents folder to import files.";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Stossycord needs Face ID to keep your Token Safe";
 				INFOPLIST_KEY_NSFileProviderPresenceUsageDescription = "We need access to your file provider to import files.";
@@ -345,6 +346,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Finchcord/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "We need access to your documents folder to import files.";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Stossycord needs Face ID to keep your Token Safe";
 				INFOPLIST_KEY_NSFileProviderPresenceUsageDescription = "We need access to your file provider to import files.";

@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Default.png",
+      "filename" : "AppIcon~ios-marketing.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -13,7 +13,6 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Dark.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -25,13 +24,11 @@
           "value" : "tinted"
         }
       ],
-      "filename" : "Tinted.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
     },
     {
-      "filename" : "icon_16x16.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
@@ -43,7 +40,6 @@
       "size" : "16x16"
     },
     {
-      "filename" : "icon_32x32.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"

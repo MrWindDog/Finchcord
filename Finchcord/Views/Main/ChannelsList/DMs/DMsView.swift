@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppKit
 import Foundation
 import KeychainSwift
 
@@ -51,7 +52,11 @@ struct DMsView: View {
             }
         }
         .padding(10)
+        #if os(iOS)
         .background(Color(.systemBackground).opacity(0.8))
+        #elseif os(macOS)
+        .background(Color(NSColor.windowBackgroundColor).opacity(0.8))
+        #endif
         .cornerRadius(10)
         .padding(.horizontal)
         .padding(.top, 8)
@@ -188,7 +193,11 @@ struct DirectMessageRow: View {
         }
         .padding(.vertical, 10)
         .padding(.horizontal, 14)
+        #if os(iOS)
         .background(Color(.secondarySystemGroupedBackground))
+        #elseif os(macOS)
+        .background(Color(NSColor.windowBackgroundColor))
+        #endif
         .cornerRadius(12)
     }
     
@@ -224,7 +233,11 @@ struct GroupChatRow: View {
         }
         .padding(.vertical, 10)
         .padding(.horizontal, 14)
+        #if os(iOS)
         .background(Color(.secondarySystemGroupedBackground))
+        #elseif os(macOS)
+        .background(Color(NSColor.windowBackgroundColor))
+        #endif
         .cornerRadius(12)
     }
     
@@ -266,7 +279,11 @@ struct UserAvatarView: View {
         .clipShape(Circle())
         .overlay(
             Circle()
+                #if os(iOS)
                 .stroke(Color(.systemBackground), lineWidth: 2)
+                #elseif os(macOS)
+                .stroke(Color(NSColor.windowBackgroundColor), lineWidth: 2)
+                #endif
         )
         .shadow(color: Color.black.opacity(0.1), radius: 2, x: 0, y: 1)
     }
@@ -288,7 +305,11 @@ struct GroupAvatarView: View {
         ZStack {
             ForEach(0..<min(3, users.count), id: \.self) { index in
                 Circle()
-                    .fill(Color(.secondarySystemGroupedBackground))
+                #if os(iOS)
+                    .fill(Color(UIColor.secondarySystemGroupedBackground))
+                #elseif os(macOS)
+                    .fill(Color(NSColor.windowBackgroundColor))
+                #endif
                     .frame(width: 30, height: 30)
                     .overlay(
                         UserInitialView(user: users[index])
@@ -348,6 +369,7 @@ struct ConversationRowButtonStyle: ButtonStyle {
     }
 }
 
+#if os(iOS)
 extension UIApplication {
     var key: UIWindow? {
         self.connectedScenes
@@ -360,19 +382,28 @@ extension UIApplication {
     }
 }
 
-
 extension UIView {
     func allSubviews() -> [UIView] {
         var subs = self.subviews
         for subview in self.subviews {
-            let rec = subview.allSubviews()
-            subs.append(contentsOf: rec)
+            subs.append(contentsOf: subview.allSubviews())
         }
         return subs
     }
 }
+#elseif os(macOS)
+extension NSView {
+    func allSubviews() -> [NSView] {
+        var subs = self.subviews
+        for subview in self.subviews {
+            subs.append(contentsOf: subview.allSubviews())
+        }
+        return subs
+    }
+}
+#endif
     
-
+#if os(iOS)
 class TabBarModifier: ObservableObject {
     
     
@@ -437,3 +468,4 @@ extension View {
         return self.modifier(HiddenTabBar())
     }
 }
+#endif

@@ -24,7 +24,9 @@ struct ChannelView: View {
     @State var editMessage: Message?
     @State var typingWorkItem: DispatchWorkItem?
     @State private var shown = true
+    #if os(iOS)
     @StateObject private var tabBarModifier = TabBarModifier.shared
+    #endif
     
     private let keychain = KeychainSwift()
     
@@ -55,9 +57,13 @@ struct ChannelView: View {
                         // Message input
                         messageInputView
                             .padding(.horizontal)
+                            #if os(iOS)
                             .padding(.bottom, tabBarModifier.shown ?
                                     keyboard.currentHeight :
                                     keyboard.currentHeight - tabBarModifier.tabBarSize)
+                            #elseif os(macOS)
+                            .padding(.bottom)
+                            #endif
                             .animation(.easeOut(duration: 0.16), value: keyboard.currentHeight)
                             .background(
                                 Rectangle()
@@ -200,7 +206,11 @@ struct ChannelView: View {
                 .padding(.horizontal)
         }
         .padding(.vertical, 8)
+        #if os(iOS)
         .background(Color(.systemGray6).opacity(0.8))
+        #elseif os(macOS)
+        .background(Color(NSColor.darkGray).opacity(0.8))
+        #endif
     }
     
     private func replyingToView(replyMessage: Message) -> some View {
@@ -235,7 +245,11 @@ struct ChannelView: View {
             }
             .padding(.horizontal)
             .padding(.vertical, 8)
+            #if os(iOS)
             .background(Color(.systemGray6).opacity(0.8))
+            #elseif os(macOS)
+            .background(Color(NSColor.darkGray).opacity(0.8))
+            #endif
         }
     }
     
@@ -274,7 +288,11 @@ struct ChannelView: View {
             }
             .padding(.horizontal)
             .padding(.vertical, 8)
+            #if os(iOS)
             .background(Color(.systemGray6).opacity(0.8))
+            #elseif os(macOS)
+            .background(Color(NSColor.darkGray).opacity(0.8))
+            #endif
         }
     }
     
@@ -307,7 +325,11 @@ struct ChannelView: View {
             }
             .padding(.horizontal)
             .padding(.vertical, 8)
+            #if os(iOS)
             .background(Color(.systemGray6).opacity(0.8))
+            #elseif os(macOS)
+            .background(Color(NSColor.darkGray).opacity(0.8))
+            #endif
         }
     }
     
@@ -329,7 +351,11 @@ struct ChannelView: View {
             .padding(.horizontal, 12)
             .background(
                 RoundedRectangle(cornerRadius: 20)
+                    #if os(iOS)
                     .fill(Color(.systemGray6))
+                    #elseif os(macOS)
+                    .fill(Color(NSColor.darkGray))
+                    #endif
             )
             .onChange(of: message) { _ in
                 handleTypingIndicator()
@@ -420,7 +446,11 @@ struct ChannelView: View {
                         .padding(.vertical, 10)
                         .background(
                             RoundedRectangle(cornerRadius: 12)
+                                #if os(iOS)
                                 .fill(Color(.systemGray6))
+                                #elseif os(macOS)
+                                .fill(Color(NSColor.darkGray))
+                                #endif
                         )
                 }
                 .padding(.horizontal)
@@ -472,7 +502,9 @@ struct ChannelView: View {
     
     private func handleOnAppear() {
         guard let token = keychain.get("token") else { return }
+        #if os(iOS)
         TabBarModifier.shared.hideTabBar()
+        #endif
         
         DispatchQueue.main.async {
             webSocketService.currentchannel = currentid
@@ -483,7 +515,9 @@ struct ChannelView: View {
     private func handleOnDisappear() {
         webSocketService.currentchannel = ""
         webSocketService.data.removeAll(where: { $0.channelId == currentid })
+        #if os(iOS)
         TabBarModifier.shared.showTabBar()
+        #endif
         
         if currentchannelname.starts(with: "@") {
             guard let token = keychain.get("token") else { return }
@@ -674,8 +708,10 @@ final class KeyboardResponder: ObservableObject {
 
     init(center: NotificationCenter = .default) {
         notificationCenter = center
+        #if os(iOS)
         notificationCenter.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        #endif
     }
 
     deinit {
@@ -683,9 +719,11 @@ final class KeyboardResponder: ObservableObject {
     }
 
     @objc func keyBoardWillShow(notification: Notification) {
+        #if os(iOS)
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             currentHeight = keyboardSize.height
         }
+        #endif
     }
 
     @objc func keyBoardWillHide(notification: Notification) {

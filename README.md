@@ -1,8 +1,9 @@
-# Stossycord Rewrite
+# Finchcord
+*Based on Stossycord*
 
-Stossycord is a Discord Client Native to iOS Devices. It is made in 100% Swift and SwiftUI for Privacy, Responsiveness and Security
+Finchcord is a Discord Client Native to iOS Devices. It is made in 100% Swift and SwiftUI for Privacy, Responsiveness and Security
 
-**Note:** Stossycord is still in beta so there will be bugs and glitches, if you find any please join the [Discord](https://discord.gg/sNzwHGDVEJ) report it there and make a post in [Issues](https://github.com/Stossycord/Stossycord/issues)
+**Note:** Finchcord is still in beta so there will be bugs and glitches, if you find any please ] make an issue
 
 ## Requirements
 - iPhone or iPad with iOS 16+
@@ -30,10 +31,10 @@ Stossycord is a Discord Client Native to iOS Devices. It is made in 100% Swift a
 - Notifications
 
 # Discord
-You can find the discord server [Here](https://discord.gg/sNzwHGDVEJ)
+No discord server yet
 
 # How to install
 
-You can install Stossycord with any App Signer you want. 
+You can install Finchcord with any App Signer you want. 
 
 [SideStore](https://sidestore.io) is preferred (but Sideloadly, AltStore, etc work fine)

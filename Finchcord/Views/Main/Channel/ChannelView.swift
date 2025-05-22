@@ -449,7 +449,7 @@ struct ChannelView: View {
         } else if let editMessages = editMessage {
             var editedMessage = editMessages
             editedMessage.content = message
-            Stossycord.editMessage(message: editedMessage)
+            Finchcord.editMessage(message: editedMessage)
         } else {
             SendMessage(
                 content: message,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FD744E22DDF9E7E008C8C30 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD744E12DDF9E7E008C8C30 /* ZIPFoundation */; };
 		4E099B762C9BD7BF00C2D383 /* CocoaAsyncSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 4E099B752C9BD7BF00C2D383 /* CocoaAsyncSocket */; };
 		4E099B792C9BD7C800C2D383 /* Giffy in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4E099B782C9BD7C800C2D383 /* Giffy */; };
 		4E099B7C2C9BD7D100C2D383 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4E099B7B2C9BD7D100C2D383 /* KeychainSwift */; };
@@ -16,26 +17,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4E099B632C9BD76C00C2D383 /* Stossycord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stossycord.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E099B632C9BD76C00C2D383 /* Finchcord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finchcord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		4E4F31562C9E7ADB00C545DD /* Exceptions for "Stossycord" folder in "Stossycord" target */ = {
+		4E4F31562C9E7ADB00C545DD /* Exceptions for "Finchcord" folder in "Finchcord" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 4E099B622C9BD76C00C2D383 /* Stossycord */;
+			target = 4E099B622C9BD76C00C2D383 /* Finchcord */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		4E099B652C9BD76C00C2D383 /* Stossycord */ = {
+		4E099B652C9BD76C00C2D383 /* Finchcord */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				4E4F31562C9E7ADB00C545DD /* Exceptions for "Stossycord" folder in "Stossycord" target */,
+				4E4F31562C9E7ADB00C545DD /* Exceptions for "Finchcord" folder in "Finchcord" target */,
 			);
-			path = Stossycord;
+			path = Finchcord;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -51,6 +52,7 @@
 				8D1E628F2D6DD93200706060 /* MarkdownUI in Frameworks */,
 				4E099B822C9BD7EC00C2D383 /* Starscream in Frameworks */,
 				4E099B762C9BD7BF00C2D383 /* CocoaAsyncSocket in Frameworks */,
+				0FD744E22DDF9E7E008C8C30 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +62,7 @@
 		4E099B5A2C9BD76C00C2D383 = {
 			isa = PBXGroup;
 			children = (
-				4E099B652C9BD76C00C2D383 /* Stossycord */,
+				4E099B652C9BD76C00C2D383 /* Finchcord */,
 				4E099B642C9BD76C00C2D383 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,7 +70,7 @@
 		4E099B642C9BD76C00C2D383 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E099B632C9BD76C00C2D383 /* Stossycord.app */,
+				4E099B632C9BD76C00C2D383 /* Finchcord.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,9 +78,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4E099B622C9BD76C00C2D383 /* Stossycord */ = {
+		4E099B622C9BD76C00C2D383 /* Finchcord */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E099B712C9BD76E00C2D383 /* Build configuration list for PBXNativeTarget "Stossycord" */;
+			buildConfigurationList = 4E099B712C9BD76E00C2D383 /* Build configuration list for PBXNativeTarget "Finchcord" */;
 			buildPhases = (
 				4E099B5F2C9BD76C00C2D383 /* Sources */,
 				4E099B602C9BD76C00C2D383 /* Frameworks */,
@@ -89,9 +91,9 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				4E099B652C9BD76C00C2D383 /* Stossycord */,
+				4E099B652C9BD76C00C2D383 /* Finchcord */,
 			);
-			name = Stossycord;
+			name = Finchcord;
 			packageProductDependencies = (
 				4E099B752C9BD7BF00C2D383 /* CocoaAsyncSocket */,
 				4E099B782C9BD7C800C2D383 /* Giffy */,
@@ -99,9 +101,10 @@
 				4E099B7E2C9BD7DB00C2D383 /* OggDecoder */,
 				4E099B812C9BD7EC00C2D383 /* Starscream */,
 				8D1E628E2D6DD93200706060 /* MarkdownUI */,
+				0FD744E12DDF9E7E008C8C30 /* ZIPFoundation */,
 			);
 			productName = Stossycord;
-			productReference = 4E099B632C9BD76C00C2D383 /* Stossycord.app */;
+			productReference = 4E099B632C9BD76C00C2D383 /* Finchcord.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -112,14 +115,14 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					4E099B622C9BD76C00C2D383 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
-			buildConfigurationList = 4E099B5E2C9BD76C00C2D383 /* Build configuration list for PBXProject "Stossycord" */;
+			buildConfigurationList = 4E099B5E2C9BD76C00C2D383 /* Build configuration list for PBXProject "Finchcord" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -135,13 +138,14 @@
 				4E099B7D2C9BD7DB00C2D383 /* XCRemoteSwiftPackageReference "OggDecoder" */,
 				4E099B802C9BD7EC00C2D383 /* XCRemoteSwiftPackageReference "Starscream" */,
 				8D1E628D2D6DD93200706060 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				0FD744E02DDF9E7E008C8C30 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4E099B642C9BD76C00C2D383 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4E099B622C9BD76C00C2D383 /* Stossycord */,
+				4E099B622C9BD76C00C2D383 /* Finchcord */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +206,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 35BWY46G6T;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -265,6 +270,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 35BWY46G6T;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -291,14 +297,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Stossycord/Stossycord.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Finchcord/Finchcord.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 95J8WZ4TN8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Stossycord/Info.plist;
+				INFOPLIST_FILE = Finchcord/Info.plist;
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "We need access to your documents folder to import files.";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Stossycord needs Face ID to keep your Token Safe";
 				INFOPLIST_KEY_NSFileProviderPresenceUsageDescription = "We need access to your file provider to import files.";
@@ -316,7 +321,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stossy11.Stossycord;
+				PRODUCT_BUNDLE_IDENTIFIER = com.winddog.Finchcord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -333,14 +338,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Stossycord/Stossycord.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Finchcord/Finchcord.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 95J8WZ4TN8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Stossycord/Info.plist;
+				INFOPLIST_FILE = Finchcord/Info.plist;
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "We need access to your documents folder to import files.";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Stossycord needs Face ID to keep your Token Safe";
 				INFOPLIST_KEY_NSFileProviderPresenceUsageDescription = "We need access to your file provider to import files.";
@@ -358,7 +362,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stossy11.Stossycord;
+				PRODUCT_BUNDLE_IDENTIFIER = com.winddog.Finchcord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -373,7 +377,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4E099B5E2C9BD76C00C2D383 /* Build configuration list for PBXProject "Stossycord" */ = {
+		4E099B5E2C9BD76C00C2D383 /* Build configuration list for PBXProject "Finchcord" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E099B6F2C9BD76E00C2D383 /* Debug */,
@@ -382,7 +386,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E099B712C9BD76E00C2D383 /* Build configuration list for PBXNativeTarget "Stossycord" */ = {
+		4E099B712C9BD76E00C2D383 /* Build configuration list for PBXNativeTarget "Finchcord" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E099B722C9BD76E00C2D383 /* Debug */,
@@ -394,6 +398,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0FD744E02DDF9E7E008C8C30 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.19;
+			};
+		};
 		4E099B742C9BD7BF00C2D383 /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/robbiehanson/CocoaAsyncSocket";
@@ -445,6 +457,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0FD744E12DDF9E7E008C8C30 /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FD744E02DDF9E7E008C8C30 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
 		4E099B752C9BD7BF00C2D383 /* CocoaAsyncSocket */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4E099B742C9BD7BF00C2D383 /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */;

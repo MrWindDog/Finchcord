@@ -17,7 +17,7 @@ struct WelcomeView: View {
                 .padding()
         } else {
             VStack {
-                Text("Welcome to\nStossycord")
+                Text("Welcome to\nFinchcord")
                     .font(.largeTitle)
                     .bold()
                 

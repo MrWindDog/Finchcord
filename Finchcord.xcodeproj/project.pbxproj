@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FAA217B2DDFD42800E36590 /* Clibsodium in Frameworks */ = {isa = PBXBuildFile; productRef = 0FAA217A2DDFD42800E36590 /* Clibsodium */; };
+		0FAA217D2DDFD42800E36590 /* Sodium in Frameworks */ = {isa = PBXBuildFile; productRef = 0FAA217C2DDFD42800E36590 /* Sodium */; };
 		0FD744E22DDF9E7E008C8C30 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD744E12DDF9E7E008C8C30 /* ZIPFoundation */; };
 		4E099B762C9BD7BF00C2D383 /* CocoaAsyncSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 4E099B752C9BD7BF00C2D383 /* CocoaAsyncSocket */; };
 		4E099B792C9BD7C800C2D383 /* Giffy in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4E099B782C9BD7C800C2D383 /* Giffy */; };
@@ -51,8 +53,10 @@
 				4E099B792C9BD7C800C2D383 /* Giffy in Frameworks */,
 				8D1E628F2D6DD93200706060 /* MarkdownUI in Frameworks */,
 				4E099B822C9BD7EC00C2D383 /* Starscream in Frameworks */,
+				0FAA217B2DDFD42800E36590 /* Clibsodium in Frameworks */,
 				4E099B762C9BD7BF00C2D383 /* CocoaAsyncSocket in Frameworks */,
 				0FD744E22DDF9E7E008C8C30 /* ZIPFoundation in Frameworks */,
+				0FAA217D2DDFD42800E36590 /* Sodium in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +106,8 @@
 				4E099B812C9BD7EC00C2D383 /* Starscream */,
 				8D1E628E2D6DD93200706060 /* MarkdownUI */,
 				0FD744E12DDF9E7E008C8C30 /* ZIPFoundation */,
+				0FAA217A2DDFD42800E36590 /* Clibsodium */,
+				0FAA217C2DDFD42800E36590 /* Sodium */,
 			);
 			productName = Stossycord;
 			productReference = 4E099B632C9BD76C00C2D383 /* Finchcord.app */;
@@ -139,6 +145,7 @@
 				4E099B802C9BD7EC00C2D383 /* XCRemoteSwiftPackageReference "Starscream" */,
 				8D1E628D2D6DD93200706060 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 				0FD744E02DDF9E7E008C8C30 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+				0FAA21792DDFD42800E36590 /* XCRemoteSwiftPackageReference "swift-sodium" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4E099B642C9BD76C00C2D383 /* Products */;
@@ -400,6 +407,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0FAA21792DDFD42800E36590 /* XCRemoteSwiftPackageReference "swift-sodium" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jedisct1/swift-sodium.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.1;
+			};
+		};
 		0FD744E02DDF9E7E008C8C30 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/weichsel/ZIPFoundation.git";
@@ -459,6 +474,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0FAA217A2DDFD42800E36590 /* Clibsodium */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FAA21792DDFD42800E36590 /* XCRemoteSwiftPackageReference "swift-sodium" */;
+			productName = Clibsodium;
+		};
+		0FAA217C2DDFD42800E36590 /* Sodium */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FAA21792DDFD42800E36590 /* XCRemoteSwiftPackageReference "swift-sodium" */;
+			productName = Sodium;
+		};
 		0FD744E12DDF9E7E008C8C30 /* ZIPFoundation */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0FD744E02DDF9E7E008C8C30 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;

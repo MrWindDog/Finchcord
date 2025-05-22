@@ -7,6 +7,7 @@
 
 import SwiftUI
 import KeychainSwift
+import UserNotifications
 
 @main
 struct StossycordApp: App {
@@ -29,6 +30,16 @@ struct StossycordApp: App {
                             if !webSocketService.currentchannel.isEmpty {
                                 getDiscordMessages(token: webSocketService.token, webSocketService: webSocketService)
                             }
+                            
+                            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+                                if granted {
+                                    print("Notifications granted")
+                                }
+                                else {
+                                    print("Notifications denied")
+                                }
+                            }
+                            
                             print("App opened")
                         }
                     case .inactive:

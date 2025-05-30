@@ -10,7 +10,7 @@ As of now, Finchcord operates off of your discord token, which is **against Disc
 
 ## Requirements
 - iPhone or iPad with iOS 16+
-- Mac macOS 13+
+- Mac with macOS 13+
 - A Discord Account (Token is needed, this will change sometime in the future)
 
 
@@ -25,11 +25,11 @@ As of now, Finchcord operates off of your discord token, which is **against Disc
 ## WIP
 - Voice Chat
 - Notifications
+- Joining Servers
 
 ## Not Supported Features (Coming Soon)
 - Roles
 - Adding Friends
-- Joining Servers
 - User Profiles
 - Discord Settings
 - Reactions

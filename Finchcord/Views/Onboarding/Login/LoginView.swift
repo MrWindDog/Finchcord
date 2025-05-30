@@ -96,23 +96,66 @@ struct WebView: NSViewRepresentable {
         }
 
         func checkForToken(in webView: WKWebView) {
-            // JavaScript to retrieve token from localStorage
             let js = """
             (function() {
-              let a = [];
-              webpackChunkdiscord_app.push([[0],,e=>Object.keys(e.c).find(t=>(t=e(t)?.default?.getToken?.())&&a.push(t))]);
-              return a[0];
+                try {
+                    // First try: look in localStorage (legacy)
+                    let token = localStorage.getItem("token");
+                    if (token) return token.replace(/"/g, '');
+
+                    // Second try: look for a global function that exposes the token
+                    for (let key in window) {
+                        try {
+                            if (window[key] && typeof window[key].getToken === 'function') {
+                                const t = window[key].getToken();
+                                if (t) return t;
+                            }
+                        } catch (e) {}
+                    }
+
+                    // Third try: fallback using Object.values and Webpack search
+                    if (typeof webpackChunkdiscord_app === 'object') {
+                        let a = [];
+                        webpackChunkdiscord_app.push([
+                            [Math.random()],
+                            {},
+                            e => {
+                                for (let c of Object.keys(e.c)) {
+                                    try {
+                                        let m = e.c[c].exports?.default;
+                                        if (m && typeof m.getToken === 'function') {
+                                            let token = m.getToken();
+                                            if (token) {
+                                                a.push(token);
+                                                break;
+                                            }
+                                        }
+                                    } catch (err) {}
+                                }
+                            }
+                        ]);
+                        return a[0];
+                    }
+
+                    return null;
+                } catch (e) {
+                    return null;
+                }
             })();
             """
 
-            // Execute JavaScript and retry if not found
             webView.evaluateJavaScript(js) { result, error in
                 if let token = result as? String, !token.isEmpty {
+                    print("Token found")
                     self.onTokenDetected?(token)
                 } else {
                     self.retryCount += 1
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        self.checkForToken(in: webView)
+                    if self.retryCount < 10 {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self.checkForToken(in: webView)
+                        }
+                    } else {
+                        print("Token not found after multiple attempts.")
                     }
                 }
             }
@@ -120,7 +163,7 @@ struct WebView: NSViewRepresentable {
     }
 }
 
-#else
+#elseif os(iOS)
 struct WebView: UIViewRepresentable {
     let url: URL
     var onTokenDetected: ((String) -> Void)?
@@ -153,23 +196,66 @@ struct WebView: UIViewRepresentable {
         }
 
         func checkForToken(in webView: WKWebView) {
-            // JavaScript to retrieve token from localStorage
             let js = """
             (function() {
-              let a = [];
-              webpackChunkdiscord_app.push([[0],,e=>Object.keys(e.c).find(t=>(t=e(t)?.default?.getToken?.())&&a.push(t))]);
-              return a[0];
+                try {
+                    // First try: look in localStorage (legacy)
+                    let token = localStorage.getItem("token");
+                    if (token) return token.replace(/"/g, '');
+
+                    // Second try: look for a global function that exposes the token
+                    for (let key in window) {
+                        try {
+                            if (window[key] && typeof window[key].getToken === 'function') {
+                                const t = window[key].getToken();
+                                if (t) return t;
+                            }
+                        } catch (e) {}
+                    }
+
+                    // Third try: fallback using Object.values and Webpack search
+                    if (typeof webpackChunkdiscord_app === 'object') {
+                        let a = [];
+                        webpackChunkdiscord_app.push([
+                            [Math.random()],
+                            {},
+                            e => {
+                                for (let c of Object.keys(e.c)) {
+                                    try {
+                                        let m = e.c[c].exports?.default;
+                                        if (m && typeof m.getToken === 'function') {
+                                            let token = m.getToken();
+                                            if (token) {
+                                                a.push(token);
+                                                break;
+                                            }
+                                        }
+                                    } catch (err) {}
+                                }
+                            }
+                        ]);
+                        return a[0];
+                    }
+
+                    return null;
+                } catch (e) {
+                    return null;
+                }
             })();
             """
 
-            // Execute JavaScript and retry if not found
             webView.evaluateJavaScript(js) { result, error in
                 if let token = result as? String, !token.isEmpty {
+                    print("Token found")
                     self.onTokenDetected?(token)
                 } else {
                     self.retryCount += 1
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        self.checkForToken(in: webView)
+                    if self.retryCount < 10 {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self.checkForToken(in: webView)
+                        }
+                    } else {
+                        print("Token not found after multiple attempts.")
                     }
                 }
             }
@@ -177,4 +263,3 @@ struct WebView: UIViewRepresentable {
     }
 }
 #endif
-

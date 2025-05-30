@@ -23,6 +23,8 @@ struct DeviceInfo: Codable {
     let clientBuildNumber: Int
     let clientEventSource: String?
     let designId: Int
+    let hasClientMods: Bool // Added field
+    let capabilities: Int // Added field
     
     func toBase64() -> String? {
         guard let jsonData = try? JSONEncoder().encode(self) else { return nil }

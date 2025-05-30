@@ -10,7 +10,7 @@ import KeychainSwift
 import UserNotifications
 
 @main
-struct StossycordApp: App {
+struct FinchcordApp: App {
     @StateObject var webSocketService = WebSocketService.shared
     let keychain = KeychainSwift()
     @State var isPresented: Bool = false

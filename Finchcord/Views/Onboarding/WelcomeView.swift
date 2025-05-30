@@ -20,8 +20,9 @@ struct WelcomeView: View {
                 Text("Welcome to\nFinchcord")
                     .font(.largeTitle)
                     .bold()
+                    .multilineTextAlignment(.center)
                 
-                Text("A Native Discord Client for iOS")
+                Text("A Swift Native Discord Client,\nfor iOS and macOS")
                     .font(.title2)
                     .padding()
                     .multilineTextAlignment(.center)

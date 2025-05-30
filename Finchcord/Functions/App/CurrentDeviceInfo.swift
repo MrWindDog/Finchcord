@@ -36,21 +36,23 @@ class CurrentDeviceInfo {
     
     public var deviceInfo: DeviceInfo {
         let deviceInfo = DeviceInfo(
-            os: "Mac OS X",
-            browser: "Safari",
-            device: "",
-            systemLocale: "\(currentTimeZone)-\(Country))",
-            browserUserAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X \(self.systemVersion)) AppleWebKit/\(getWebKitVersion()) (KHTML, like Gecko) Version/17.4 Safari/\(getWebKitVersion())",
-            browserVersion: "17.4",
-            osVersion: self.systemVersion,
-            referrer: "",
-            referringDomain: "",
-            referrerCurrent: "",
-            referringDomainCurrent: "",
-            releaseChannel: "stable",
-            clientBuildNumber: 318966,
-            clientEventSource: "nil",
-            designId: 0
+            os: "Mac OS X", // from C++: "Windows" -> "Mac OS X"
+            browser: "Safari", // from C++: "Chrome" -> "Safari"
+            device: "", // same as C++
+            systemLocale: "en-US", // fixed as per C++
+            browserUserAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X \(self.systemVersion)) AppleWebKit/\(getWebKitVersion()) (KHTML, like Gecko) Version/17.4 Safari/\(getWebKitVersion())", // adapted UA string
+            browserVersion: "17.4", // Safari version
+            osVersion: self.systemVersion, // dynamic OS version
+            referrer: "", // same as C++
+            referringDomain: "", // same as C++
+            referrerCurrent: "", // same as C++
+            referringDomainCurrent: "", // same as C++
+            releaseChannel: "stable", // same as C++
+            clientBuildNumber: 318966, // from m_build_number
+            clientEventSource: "", // same as C++
+            designId: 0, // no equivalent in C++, assuming safe default
+            hasClientMods: false, // new: from C++ msg.Properties.HasClientMods
+            capabilities: 4605 // new: from C++ msg.Capabilities
         )
         return deviceInfo
     }

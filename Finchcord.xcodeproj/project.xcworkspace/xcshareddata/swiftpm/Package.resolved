@@ -1,5 +1,5 @@
 {
-  "originHash" : "5647581755680647bf8923ba9e41bc45f5a968c5e81ce863287b919dc3c27454",
+  "originHash" : "d290c836b95632b6f0dae266a8e70f425c5db59aecfdfb3d9131c8e73740deb7",
   "pins" : [
     {
       "identity" : "cocoaasyncsocket",
@@ -47,12 +47,12 @@
       }
     },
     {
-      "identity" : "oggdecoder",
+      "identity" : "oggvorbisdecoder",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/arkasas/OggDecoder.git",
+      "location" : "https://github.com/kutakmir/OggVorbisDecoder.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "65e1465e593d2b0be6ac12256f2866a18d26e211"
+        "revision" : "65e1465e593d2b0be6ac12256f2866a18d26e211",
+        "version" : "0.1.0"
       }
     },
     {
@@ -80,6 +80,15 @@
       "state" : {
         "revision" : "5f613358148239d0292c0cef674a3c2314737f9e",
         "version" : "2.4.1"
+      }
+    },
+    {
+      "identity" : "swift-opus",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alta/swift-opus.git",
+      "state" : {
+        "revision" : "5f0164b8915fb9001265c54413aa0f0efbd3df06",
+        "version" : "0.0.2"
       }
     },
     {

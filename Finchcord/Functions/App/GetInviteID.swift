@@ -9,9 +9,11 @@ import Foundation
 
 func GetInviteId(from url: String) -> String? {
     let regexPattern = #"https?://(www\.)?(discord\.gg|discord\.com/invite)/([a-zA-Z0-9]+)"#
+    let regexPatternCustomServerURL = #"https?://(www\.)?(discord\.gg|discord\.com/)/([a-zA-Z0-9]+)"#
     
     do {
         let regex = try NSRegularExpression(pattern: regexPattern, options: .caseInsensitive)
+        let regexCustomServerURL = try NSRegularExpression(pattern: regexPatternCustomServerURL, options: .caseInsensitive)
         let range = NSRange(location: 0, length: url.utf16.count)
         
         if let match = regex.firstMatch(in: url, options: [], range: range) {
@@ -19,7 +21,12 @@ func GetInviteId(from url: String) -> String? {
             if let inviteIDRange = Range(match.range(at: 3), in: url) {
                 return String(url[inviteIDRange])
             }
-        }
+        } /*
+        else if let matchCustomServerURL = regexCustomServerURL.firstMatch(in: url, options: [], range: range) {
+            if let inviteIDRange = Range(matchCustomServerURL.range(at: 3), in: url) {
+                return String(url[inviteIDRange])
+            }
+        } */
     } catch {
         print("Invalid regex: \(error)")
     }

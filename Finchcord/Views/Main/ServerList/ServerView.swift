@@ -25,7 +25,7 @@ struct ServerView: View {
                     }
             }
             .navigationTitle("Servers")
-            #if !os(macOS)
+            #if os(iOS)
             .toolbar(.visible, for: .tabBar)
             #endif
         }

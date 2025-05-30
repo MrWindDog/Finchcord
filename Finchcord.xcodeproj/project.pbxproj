@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F5766F82DE0094600E3952E /* Copus in Frameworks */ = {isa = PBXBuildFile; productRef = 0F5766F72DE0094600E3952E /* Copus */; };
+		0F5766FA2DE0094600E3952E /* Opus in Frameworks */ = {isa = PBXBuildFile; productRef = 0F5766F92DE0094600E3952E /* Opus */; };
+		0F80CEAC2DE199CC00213829 /* OggDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = 0F80CEAB2DE199CC00213829 /* OggDecoder */; };
 		0FAA217B2DDFD42800E36590 /* Clibsodium in Frameworks */ = {isa = PBXBuildFile; productRef = 0FAA217A2DDFD42800E36590 /* Clibsodium */; };
 		0FAA217D2DDFD42800E36590 /* Sodium in Frameworks */ = {isa = PBXBuildFile; productRef = 0FAA217C2DDFD42800E36590 /* Sodium */; };
 		0FD744E22DDF9E7E008C8C30 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD744E12DDF9E7E008C8C30 /* ZIPFoundation */; };
 		4E099B762C9BD7BF00C2D383 /* CocoaAsyncSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 4E099B752C9BD7BF00C2D383 /* CocoaAsyncSocket */; };
 		4E099B792C9BD7C800C2D383 /* Giffy in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 4E099B782C9BD7C800C2D383 /* Giffy */; };
 		4E099B7C2C9BD7D100C2D383 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4E099B7B2C9BD7D100C2D383 /* KeychainSwift */; };
-		4E099B7F2C9BD7DB00C2D383 /* OggDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = 4E099B7E2C9BD7DB00C2D383 /* OggDecoder */; };
 		4E099B822C9BD7EC00C2D383 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 4E099B812C9BD7EC00C2D383 /* Starscream */; };
 		8D1E628F2D6DD93200706060 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8D1E628E2D6DD93200706060 /* MarkdownUI */; };
 /* End PBXBuildFile section */
@@ -48,8 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F5766F82DE0094600E3952E /* Copus in Frameworks */,
 				4E099B7C2C9BD7D100C2D383 /* KeychainSwift in Frameworks */,
-				4E099B7F2C9BD7DB00C2D383 /* OggDecoder in Frameworks */,
 				4E099B792C9BD7C800C2D383 /* Giffy in Frameworks */,
 				8D1E628F2D6DD93200706060 /* MarkdownUI in Frameworks */,
 				4E099B822C9BD7EC00C2D383 /* Starscream in Frameworks */,
@@ -57,6 +59,8 @@
 				4E099B762C9BD7BF00C2D383 /* CocoaAsyncSocket in Frameworks */,
 				0FD744E22DDF9E7E008C8C30 /* ZIPFoundation in Frameworks */,
 				0FAA217D2DDFD42800E36590 /* Sodium in Frameworks */,
+				0F80CEAC2DE199CC00213829 /* OggDecoder in Frameworks */,
+				0F5766FA2DE0094600E3952E /* Opus in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,12 +106,14 @@
 				4E099B752C9BD7BF00C2D383 /* CocoaAsyncSocket */,
 				4E099B782C9BD7C800C2D383 /* Giffy */,
 				4E099B7B2C9BD7D100C2D383 /* KeychainSwift */,
-				4E099B7E2C9BD7DB00C2D383 /* OggDecoder */,
 				4E099B812C9BD7EC00C2D383 /* Starscream */,
 				8D1E628E2D6DD93200706060 /* MarkdownUI */,
 				0FD744E12DDF9E7E008C8C30 /* ZIPFoundation */,
 				0FAA217A2DDFD42800E36590 /* Clibsodium */,
 				0FAA217C2DDFD42800E36590 /* Sodium */,
+				0F5766F72DE0094600E3952E /* Copus */,
+				0F5766F92DE0094600E3952E /* Opus */,
+				0F80CEAB2DE199CC00213829 /* OggDecoder */,
 			);
 			productName = Stossycord;
 			productReference = 4E099B632C9BD76C00C2D383 /* Finchcord.app */;
@@ -141,11 +147,12 @@
 				4E099B742C9BD7BF00C2D383 /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */,
 				4E099B772C9BD7C800C2D383 /* XCRemoteSwiftPackageReference "giffy" */,
 				4E099B7A2C9BD7D100C2D383 /* XCRemoteSwiftPackageReference "keychain-swift" */,
-				4E099B7D2C9BD7DB00C2D383 /* XCRemoteSwiftPackageReference "OggDecoder" */,
 				4E099B802C9BD7EC00C2D383 /* XCRemoteSwiftPackageReference "Starscream" */,
 				8D1E628D2D6DD93200706060 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 				0FD744E02DDF9E7E008C8C30 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 				0FAA21792DDFD42800E36590 /* XCRemoteSwiftPackageReference "swift-sodium" */,
+				0F5766F62DE0094600E3952E /* XCRemoteSwiftPackageReference "swift-opus" */,
+				0F80CEAA2DE199CC00213829 /* XCRemoteSwiftPackageReference "OggVorbisDecoder" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4E099B642C9BD76C00C2D383 /* Products */;
@@ -305,12 +312,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Finchcord/Finchcord.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 35BWY46G6T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Finchcord/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Finchcord;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "We need access to your documents folder to import files.";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Stossycord needs Face ID to keep your Token Safe";
@@ -320,17 +331,18 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.winddog.Finchcord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				REGISTER_APP_GROUPS = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
@@ -347,12 +359,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Finchcord/Finchcord.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 35BWY46G6T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Finchcord/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Finchcord;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "We need access to your documents folder to import files.";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Stossycord needs Face ID to keep your Token Safe";
@@ -362,17 +378,18 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.winddog.Finchcord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				REGISTER_APP_GROUPS = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
@@ -407,6 +424,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0F5766F62DE0094600E3952E /* XCRemoteSwiftPackageReference "swift-opus" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alta/swift-opus.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
+			};
+		};
+		0F80CEAA2DE199CC00213829 /* XCRemoteSwiftPackageReference "OggVorbisDecoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kutakmir/OggVorbisDecoder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
 		0FAA21792DDFD42800E36590 /* XCRemoteSwiftPackageReference "swift-sodium" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jedisct1/swift-sodium.git";
@@ -447,14 +480,6 @@
 				minimumVersion = 24.0.0;
 			};
 		};
-		4E099B7D2C9BD7DB00C2D383 /* XCRemoteSwiftPackageReference "OggDecoder" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/arkasas/OggDecoder.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		4E099B802C9BD7EC00C2D383 /* XCRemoteSwiftPackageReference "Starscream" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/daltoniam/Starscream";
@@ -474,6 +499,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0F5766F72DE0094600E3952E /* Copus */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F5766F62DE0094600E3952E /* XCRemoteSwiftPackageReference "swift-opus" */;
+			productName = Copus;
+		};
+		0F5766F92DE0094600E3952E /* Opus */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F5766F62DE0094600E3952E /* XCRemoteSwiftPackageReference "swift-opus" */;
+			productName = Opus;
+		};
+		0F80CEAB2DE199CC00213829 /* OggDecoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F80CEAA2DE199CC00213829 /* XCRemoteSwiftPackageReference "OggVorbisDecoder" */;
+			productName = OggDecoder;
+		};
 		0FAA217A2DDFD42800E36590 /* Clibsodium */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0FAA21792DDFD42800E36590 /* XCRemoteSwiftPackageReference "swift-sodium" */;
@@ -503,11 +543,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4E099B7A2C9BD7D100C2D383 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
-		};
-		4E099B7E2C9BD7DB00C2D383 /* OggDecoder */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4E099B7D2C9BD7DB00C2D383 /* XCRemoteSwiftPackageReference "OggDecoder" */;
-			productName = OggDecoder;
 		};
 		4E099B812C9BD7EC00C2D383 /* Starscream */ = {
 			isa = XCSwiftPackageProductDependency;

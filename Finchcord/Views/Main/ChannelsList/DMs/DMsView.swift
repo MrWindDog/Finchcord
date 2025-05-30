@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import AppKit
 import Foundation
 import KeychainSwift
 

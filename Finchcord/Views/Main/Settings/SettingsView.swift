@@ -29,10 +29,54 @@ struct SettingsView: View {
                 .padding()
             
             List {
-                Section("Token") {
+                if let token = keychain.get("token") {
+                    Section("Experimental") {
+                        Section("Calling:") {
+                            ZStack {
+                                Button {
+                                    //code
+                                } label: {
+                                    Text("Test Calling Feature")
+                                }
+                                .padding(.bottom, 5)
+                            }
+                        }
+                        
+                        Section("Servers:") {
+                            HStack {
+                                Text("Join Server: ")
+                                
+                                TextField("Discord Invite Link", text: $guildID)
+                                    .onSubmit {
+                                        if let inviteID = GetInviteId(from: guildID) {
+                                            GetServerID(token: token, inviteID: inviteID) { invite in
+                                                print(invite)
+                                                if let invite {
+                                                    joinDiscordGuild(token: token, guildId: invite) { response in
+                                                        if response == nil {
+                                                            print("Server already joined")
+                                                        } else {
+                                                            print(response)
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                              //}
+                            }
+                        }
+                    }
+                    
+                    Text("Please note that these are experimental, and are more likely to get your account flagged")
+                        .background(.opacity(0))
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                        .padding(.top, 2)
+                        .listRowSeparator(.hidden)
+                }
                 
-                    
-                    
+                Section("Token") {
                     HStack {
                         Text("Token: ")
                         ZStack {
@@ -74,7 +118,6 @@ struct SettingsView: View {
                         }
                     }
                     
-                    
                     ZStack {
                         Button {
                             keychain.delete("token")
@@ -84,35 +127,18 @@ struct SettingsView: View {
                         }
                     }
                 }
-                /*
-                if let token = keychain.get("token") {
-                    Section("Servers") {
-                        HStack {
-                            Text("Join Server: ")
-                            
-                            TextField("Discord Invite Link", text: $guildID)
-                                .onSubmit {
-                                    if let inviteID = GetInviteId(from: guildID) {
-                                        GetServerID(token: token, inviteID: inviteID) { invite in
-                                            print(invite)
-                                            if let invite {
-                                                joinDiscordGuild(token: token, guildId: invite) { response in
-                                                    if response == nil {
-                                                        print("Server already joined")
-                                                    } else {
-                                                        print(response)
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        
-                                    }
-                                }
-                            
-                        }
-                    }
+                
+                Section("Credits") {
+                    Text("Main developer: @winddogstudio")
+                    Text("Based on the project Stossycord project by @stossy11")
                 }
-                 */
+                
+                Spacer()
+                    .listRowSeparator(.hidden)
+                    .background(.opacity(0))
+                Link("Github", destination: URL(string: "https://github.com/MrWindDog/Finchcord")!)
+                    .listRowSeparator(.hidden)
+                    .background(.opacity(0))
             }
             .alert(isPresented: $showAlert) {
                 .init(
